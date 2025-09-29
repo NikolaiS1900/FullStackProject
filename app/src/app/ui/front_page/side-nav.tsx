@@ -1,30 +1,12 @@
-'use client';
-
-import {
-  crochet,
-  drawing,
-  DocumentDuplicateIcon,
-} from '../../../../public';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { use } from 'react';
-import clsx from 'clsx';
+import SideNavLinks from '@/app/ui/front_page/side-nav-links';
 
-// Todo use src and html to import icons into this module
-const links = [
-    { 
-        name: 'Forside',
-        href: '/app/frontpage',
-        // icon: HomeIcon
-    },
-    {
-        name: 'Tegninger',
-        href: '/app/front_page/drawings',
-        icon: DocumentDuplicateIcon
-    },
-    {
-        name: 'Hæklede tøjdyr',
-        href: '/app/front_page/crochet',
-        icon: crochet
-    }
-]
+export default function SideNav() {
+    return (
+        <div className="flex h-full flex-col px-3 py-4 md:px-2">
+            <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">
+                <SideNavLinks />
+            </div>
+        </div>
+    );
+}
