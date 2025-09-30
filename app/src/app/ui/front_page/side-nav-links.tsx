@@ -2,22 +2,25 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { use } from 'react';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 // Todo use src and html to import icons into this module
 const links = [
     { 
         name: 'Forside',
-        href: "www.google.dk"
+        href: './',
+        icon: '/home.png'
     },
     {
         name: 'Tegninger',
-        href: "www.google.dk"
+        href: './',
+        icon: '/drawing.png'
     },
     {
         name: 'Hæklede tøjdyr',
-        href: "www.google.dk"
+        href: './',
+        icon: '/crochet.png'
     }
 ]
 
@@ -28,7 +31,6 @@ export default function SideNavLinks() {
     return (
         <>
             {links.map((link) => {
-                // const LinkIcon = link.icon; // Todo: få link til ikon
 
                 return (
                     <Link
@@ -40,7 +42,13 @@ export default function SideNavLinks() {
                             },
                         )}
                     >
-                        {/* <LinkIcon className="w-6" /> */}
+                        <Image
+                            src={link.icon}
+                            width={24}
+                            height={24}
+                            alt={`${link.name} Icon`}
+                            className="w-6 h-6"
+                        />
                         <p className="hidden md:block">{link.name}</p>
                     </Link>
                 );
