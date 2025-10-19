@@ -1,13 +1,21 @@
 import Image from "next/image";
 import SideNav from "./ui/front_page/side-nav";
+import { ImageTileSkeleton } from "./ui/front_page/skeletons";
+
+
 
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <main className="grid grid-cols-[auto_1fr] gap-[32px] row-start-2 items-start">
         <div>
           <SideNav />
+        </div>
+        <div className="flex flex-wrap gap-8">
+          {Array.from({ length: 20 }).map((_, index) => (
+          <ImageTileSkeleton key={index} />
+        ))}
         </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">

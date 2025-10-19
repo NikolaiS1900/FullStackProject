@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import SideNavLinks from '@/app/ui/front_page/side-nav-links';
 
 export default function SideNav() {
