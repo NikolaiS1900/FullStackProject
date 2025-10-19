@@ -4,8 +4,9 @@
 
 
 export function ImageTileSkeleton() {
+
     return (
-        <div className="relative overflow-hidden rounded-xl bg-gray-100
+        <div className="relative overflow-hidden rounded-xl bg-gray-400
             shadow-sm h-60 w-70 animate-pulse opacity-40">
         </div>
     );
