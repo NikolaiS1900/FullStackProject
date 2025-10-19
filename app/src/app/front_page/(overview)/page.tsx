@@ -3,5 +3,5 @@
 */
 
 export default function placeholder() {
-    const placeholder = "placeholder"
+    return <div>placeholder</div>;
 }
